@@ -14,6 +14,7 @@
     <Product>Sendspin SDK</Product>
     <Description>Cross-platform SDK for the Sendspin synchronized multi-room audio protocol. Connect to Music Assistant servers and play synchronized audio across multiple devices.</Description>
     <PackageTags>sendspin;audio;multiroom;sync;music-assistant;streaming</PackageTags>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     <PackageProjectUrl>https://github.com/chrisuthe/windowsSpin</PackageProjectUrl>
     <RepositoryUrl>https://github.com/chrisuthe/windowsSpin</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -661,17 +662,18 @@ New Features:
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Core dependencies - all cross-platform -->
-    <PackageReference Include="Concentus" Version="2.2.2" />
-    <PackageReference Include="Zeroconf" Version="3.7.16" />
-    <PackageReference Include="Makaretu.Dns.Multicast" Version="0.27.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\" />
+    <PackageReference Include="Concentus" Version="2.2.2" />
+    <PackageReference Include="Makaretu.Dns.Multicast" Version="0.27.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.3" />
+    <PackageReference Include="Zeroconf" Version="3.7.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Fleck\src\Fleck\Fleck.csproj" />
   </ItemGroup>
 
 </Project>
